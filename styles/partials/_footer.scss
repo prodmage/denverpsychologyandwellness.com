@@ -1,0 +1,33 @@
+﻿.footer {
+    height: 65px;
+    width: 96%;
+    padding: 10px 2%;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    background: $darkGrey;
+
+    hgroup {
+		float: left;
+	}
+
+	h1 {
+		margin: 5px 0 0;
+	}
+
+	h2 {
+		font-size: 12px;
+		margin-top: 0;
+		text-transform: uppercase;
+	}
+
+    li a { 
+        color: #fff; 
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #000;
+        }
+    }
+}
