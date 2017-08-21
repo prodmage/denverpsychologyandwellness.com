@@ -4,12 +4,14 @@
 	overflow: hidden;
 	z-index: 10;
 	position: fixed;
+	transition: color 0.3s ease;
 
 	h1 {
 		margin: 5px 0 0;
 
         a {
             color: #fff;
+            transition: color 0.3s ease;
         }
 	}
 

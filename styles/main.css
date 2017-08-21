@@ -334,11 +334,13 @@ table {
   padding: 15px 2% 20px;
   overflow: hidden;
   z-index: 10;
-  position: fixed; }
+  position: fixed;
+  transition: color 0.3s ease; }
   .header h1 {
     margin: 5px 0 0; }
     .header h1 a {
-      color: #fff; }
+      color: #fff;
+      transition: color 0.3s ease; }
   @media (min-width: 768px) {
     .header hgroup {
       float: left; } }
