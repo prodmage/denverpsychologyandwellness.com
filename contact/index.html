@@ -1,0 +1,35 @@
+---
+layout: default
+title: Contact John
+banner_url: images/contact-header.png
+---
+<div class="page-title-wrapper">
+	<h2>Contact John</h2>
+</div>
+<section class="contact-content">
+	<p>You can reach John Bodycombe at {{ site.phone_number }} and may leave a confidential voicemail at this number.</p>
+	<p>Denver Psychology and Wellness' office is located at:</p>
+	<p><strong>{{ site.address }}</strong></p>
+
+	<div style="height:100%; width:100%;">
+		<div id="map" class="contact-map"></div>
+	</div>
+</section>
+
+<script>
+	function initMap() {
+		var uluru = { lat: 39.849733, lng: -105.0515423 };
+  
+  		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 14,
+			center: uluru
+		});
+
+		var marker = new google.maps.Marker({
+			position: uluru,
+			map: map
+		});
+	}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_api_key }}&callback=initMap">
+</script>

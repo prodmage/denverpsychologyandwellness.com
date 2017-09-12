@@ -1,0 +1,26 @@
+.homepage-content {
+	margin: 0 25px 75px;
+	overflow: hidden;
+
+	@include bp(tablet) {
+		
+	}
+
+	h3, p {
+		text-align: center;
+	}
+
+	h3 {
+		color: $primaryColor;
+		font-size: 3em;
+	}
+
+	p {
+		margin: 0 auto;
+		color: $secondaryColor;
+
+		@include bp(tablet) {
+			width: 50%;
+		}
+	}
+}

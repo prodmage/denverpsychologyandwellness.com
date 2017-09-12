@@ -1,0 +1,25 @@
+base_url: http://localhost:4000
+title: Denver Psychology and Wellness
+email: prodmage@gmail.com
+phone_number: some-phone-number
+address: "Some address to your office"
+description: > #
+  JOOOOOHN
+
+google_analytics_id: 
+google_site_verification: 
+google_maps_api_key: 
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+exclude:
+  - .gitignore
+  - README.md

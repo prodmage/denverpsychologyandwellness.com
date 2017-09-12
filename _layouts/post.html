@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<section class="post-wrapper">
+	<article class="post">
+		<hgroup>
+			<div class="post-title">
+				<h3>{{ page.title }}</h3>
+				{% if page.subtitle %}
+				<h4>{{ page.subtitle }}</h4>
+				{% endif %}
+			</div>
+			<h5>{{ page.date | date: "%B %e, %Y" }}</h5>
+		</hgroup>
+		<p>
+		{{ content }}
+		</p>	
+		<p>
+			<strong>Tags:</strong>
+			{{ page.tags }}
+		</p>
+		<a href="{{ site.base_url }}/posts">Back to Posts</a>
+	</article>
+	{% include sidebar.html %}
+</section>

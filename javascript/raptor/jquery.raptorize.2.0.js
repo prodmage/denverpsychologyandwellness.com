@@ -32,8 +32,8 @@ $(document).ready(function() {
 		}
 		
 		//Raptor Vars (Modify the 'src' to your prefrence)
-		var raptorImageMarkup = '<img id="elRaptor" style="display: none" src="javascript/raptor/raptor.png" />'
-		var raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="javascript/raptor/raptor-sound.mp3" /><source src="javascript/raptor/raptor-sound.ogg" /></audio>';	
+		var raptorImageMarkup = '<img id="elRaptor" style="display: none" src="images/raptor/raptor.png" width="400" />'
+		var raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="/audio/raptor/raptor-sound.mp3" /></audio><audio id="elRaptorShriek" preload="auto"><source src="/audio/raptor/raptor-sound.ogg" /></audio>';	
 		var locked = false;
 		
 		//Append Raptor and Style
@@ -43,7 +43,8 @@ $(document).ready(function() {
 			"position":"fixed",
 			"bottom": "-300px",
 			"right" : "0",
-			"display" : "none"
+			"display" : "none",
+			"z-index": 1000
 		});
 		
 		// Animating Code

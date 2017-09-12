@@ -1,0 +1,32 @@
+﻿.main-content .error-page {
+    padding-top: 75px; 
+    min-height: calc(100% - 270px);
+
+    h2 {
+        font-size: 150px;
+    }
+
+    h3 {
+        color: $darkGrey;
+    }
+
+    .error-banner { overflow: hidden; }
+
+    .error-banner img {
+        position: absolute;
+        bottom: 0;
+    }
+    
+    .error-content {
+        float: right;
+    }
+
+    .error-content {
+        color: #fff;
+        font-size: 4em;
+
+        a { 
+            color: $darkGrey; 
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{% include top.html %}
+  <body>
+    <div id="wrapper" class="wrapper">
+      
+      {% include header.html %}
+
+      {% if page.banner_url %}
+      <img src="{{ site.base_url }}/{{ page.banner_url }}" alt="page banner" class="banner" />
+      {% endif %}
+
+      <section class="main-content">
+      	{{ content }}
+      </section>
+      <div class="push"></div>
+    </div>
+	  {% include footer.html %}
+    {% include analytics.html %}
+  </body>
+</html>
+
+<!-- Lol -->
+<button id="raptor" style="display: none"></button> 
+
+<script src="{{ site.base_url }}/javascript/jquery.bxslider.min.js"></script>
+<script src="{{ site.base_url }}/javascript/raptor/jquery.raptorize.2.0.js"></script>
+<script>
+  $(document).ready(function(){
+  $('#bxslider').bxSlider({
+    mode: 'fade',
+    captions: true,
+    pager: false,
+    auto: true,
+    pause: 5000
+  });
+
+  $('#raptor').raptorize({
+    'enterOn' : 'konami-code'
+  });
+
+  // If a user scrolls below the absolute top, then update the header
+  $(window).scroll(function () {
+    var $header = $("#header");
+
+    if ($header.offset().top == 0) {
+      $header.removeClass("alternate-header");
+    }
+    else if (!$header.hasClass("alternate-header"))
+    {
+      $header.addClass("alternate-header");
+    }
+  });
+});
+</script>
