@@ -1,14 +1,14 @@
-base_url: https://samjgriffin89.github.io/denverpsychologyandwellness.com
+base_url: https://prodmage.github.io/denverpsychologyandwellness.com
 title: Denver Psychology and Wellness
-email: prodmage@gmail.com
-phone_number: some-phone-number
-address: "Some address to your office"
+email: drjohnbodycombe@gmail.com
+phone_number: (303) 731-6149
+address: "1805 South Bellaire Street, Suite 215-1, Denver, CO 80222"
 description: > #
   JOOOOOHN
 
 google_analytics_id: 
 google_site_verification: 
-google_maps_api_key: 
+google_maps_api_key: AIzaSyDGIu3uZ-LrrGOfaroZduUo_mnEtcGaB-Q
 
 # Build settings
 markdown: kramdown
