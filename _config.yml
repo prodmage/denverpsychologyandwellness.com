@@ -1,4 +1,5 @@
-base_url: https://prodmage.github.io/denverpsychologyandwellness.com
+#base_url: https://prodmage.github.io/denverpsychologyandwellness.com
+base_url: http://localhost:4000
 title: Denver Psychology and Wellness
 email: drjohnbodycombe@gmail.com
 phone_number: (303) 731-6149

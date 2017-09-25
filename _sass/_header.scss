@@ -9,14 +9,8 @@
 	h1 {
 		margin: 5px 0 0;
 
-        a {
-            color: #fff;
-            transition: color 0.3s ease;
-
-            &:hover {
-				cursor: pointer;
-				color: $secondaryColor;
-			}
+        a img {
+        	width: 175px;
         }
 	}
 
