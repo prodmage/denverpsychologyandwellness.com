@@ -75,6 +75,7 @@
 }
 
 .about-content {
+	overflow: hidden;
 	margin: 35px 20px 35px;
 
 	@include bp(tablet) {
