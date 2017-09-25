@@ -25,37 +25,44 @@
 <script src="{{ site.base_url }}/javascript/raptor/jquery.raptorize.2.0.js"></script>
 <script>
   $(document).ready(function(){
-  $('#bxslider').bxSlider({
-    mode: 'fade',
-    captions: true,
-    pager: false,
-    auto: true,
-    pause: 5000
-  });
+    $('#bxslider').bxSlider({
+      mode: 'fade',
+      captions: true,
+      pager: false,
+      auto: true,
+      pause: 5000
+    });
 
-  $('#raptor').raptorize({
-    'enterOn' : 'konami-code'
-  });
+    $('#raptor').raptorize({
+      'enterOn' : 'konami-code'
+    });
 
-  $('#logo').hover(function() {
-    $( this ).attr("src", "{{ site.base_url }}/images/logo.png");
-  }, function() {
-    $( this ).attr("src", "{{ site.base_url }}/images/logo-white.png");
-  });
+    var isScrolling = false;
+    $('#logo').hover(function() {
+      if (!isScrolling) {
+        $( this ).attr("src", "{{ site.base_url }}/images/logo.png");
+      }
+    }, function() {
+      if (!isScrolling) {
+        $( this ).attr("src", "{{ site.base_url }}/images/logo-white.png");
+      }
+    });
 
-  // If a user scrolls below the absolute top, then update the header
-  $(window).scroll(function () {
-    var $header = $("#header");
+    // If a user scrolls below the absolute top, then update the header
+    $(window).scroll(function () {
+      var $header = $("#header");
 
-    if ($header.offset().top == 0) {
-      $header.removeClass("alternate-header");
-      $header.find('#logo').attr("src", "{{ site.base_url }}/images/logo-white.png");
-    }
-    else if (!$header.hasClass("alternate-header"))
-    {
-      $header.addClass("alternate-header");
-      $header.find('#logo').attr("src", "{{ site.base_url }}/images/logo.png");
-    }
+      if ($header.offset().top == 0) {
+        isScrolling = false;
+        $header.removeClass("alternate-header");
+        $header.find('#logo').attr("src", "{{ site.base_url }}/images/logo-white.png");
+      }
+      else if (!$header.hasClass("alternate-header"))
+      {
+        isScrolling = true;
+        $header.addClass("alternate-header");
+        $header.find('#logo').attr("src", "{{ site.base_url }}/images/logo.png");
+      }
+    });
   });
-});
 </script>
