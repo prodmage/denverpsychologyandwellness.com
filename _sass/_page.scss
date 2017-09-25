@@ -51,17 +51,13 @@
 	}
 }
 
-.banner {
-
-}
-
 .page-title-wrapper {
 	color: $primaryColor;
 	padding: 100px 0 30px;
 	text-align: center;
 	font-size: 3em;
 
-	h2 {
+	h2, h3 {
 		margin: 0;
 	}
 
@@ -82,6 +78,26 @@
 		margin: 35px 50px 35px;
 	}
 
+	h3, h4, h5, h6 {
+		color: $primaryColor;
+	}
+
+	h4 {
+		font-size: 2.5em;
+	}
+
+	h4 {
+		font-size: 2em;
+	}
+
+	h5 {
+		font-size: 1.5em;
+	}
+
+	h6 {
+		font-size: 1em;
+	}
+
 	img {
 		margin-right: 25px;
 		margin-bottom: 5px;
@@ -100,6 +116,10 @@
 			position: relative;
 			left: 25px;
 		}
+	}
+
+	a {
+		color: $secondaryColor;
 	}
 
 	.publications a {
