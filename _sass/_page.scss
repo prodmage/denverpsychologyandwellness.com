@@ -16,6 +16,18 @@
     p, li {
     	line-height: 1.5;
     }
+
+    .banner {
+	    	width: auto;
+	    	height: 200px;
+	    }
+
+    @include bp(tablet) {
+	    .banner {
+	    	width: 100%;
+	    	height: auto;
+	    }
+	}
 }
 
 .bx-wrapper {
@@ -53,7 +65,7 @@
 
 .page-title-wrapper {
 	color: $primaryColor;
-	padding: 100px 0 30px;
+	padding: 25px 0 0 0;
 	text-align: center;
 	font-size: 3em;
 
@@ -61,8 +73,25 @@
 		margin: 0;
 	}
 
+	h2 {
+		font-size: 1em;
+	}
+
+	h3 {
+		font-size: .5em;
+	}
+
 	@include bp(tablet) {
 		padding: 70px 0 30px;
+
+		h2 {
+			font-size: 2.5em;
+		}
+
+
+		h3 {
+			font-size: 1.5em;
+		}
 	}
 }
 
@@ -74,29 +103,41 @@
 	overflow: hidden;
 	margin: 35px 20px 35px;
 
-	@include bp(tablet) {
-		margin: 35px 50px 35px;
-	}
-
-	h3, h4, h5, h6 {
+	h4, h5, h6 {
 		color: $primaryColor;
 		margin: 0;
 	}
 
 	h4 {
-		font-size: 2.5em;
-	}
-
-	h4 {
-		font-size: 2em;
+		font-size: .4em;
 	}
 
 	h5 {
-		font-size: 1.5em;
+		font-size: .3em;
 	}
 
 	h6 {
-		font-size: 1em;
+		font-size: .2em;
+	}
+
+	@include bp(tablet) {
+		margin: 35px 50px 35px;
+
+		h3 {
+			font-size: 2.5em;
+		}
+
+		h4 {
+			font-size: 2em;
+		}
+
+		h5 {
+			font-size: 1.5em;
+		}
+
+		h6 {
+			font-size: 1em;
+		}
 	}
 
 	img {
