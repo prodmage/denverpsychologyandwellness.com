@@ -2,17 +2,19 @@
 layout: default
 title: Contact John
 banner_url: images/green-mountains-banner.jpg
+meta_title: Contact Dr. John Bodycombe - Denver Psychology and Wellness
+meta_description: Schedule your FREE 50-minute consultation today. Call (303) 731-6149 or email Dr. Bodycombe. Located at 1777 S Bellaire St, Suite 339, Denver, CO.
 ---
 <div class="page-title-wrapper">
 	<h2>Contact John</h2>
 </div>
 <section class="contact-content">
-	<p>Finding a therapist can be intimidating so I offer a FREE 50-minute consultation, to answer your questions and see if we would work well together.  Please call me at {{ site.phone_number }} or email me at {{ site.email}} to schedule an appointment and I am usually able to schedule our first meeting within a week.</p>
+	<p>Finding a therapist can be intimidating so I offer a FREE 50-minute consultation, to answer your questions and see if we would work well together.  Please call me at <a href="tel:{{ site.phone_number | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}">{{ site.phone_number }}</a> or email me at <a href="mailto:{{ site.email}}">{{ site.email}}</a> to schedule an appointment and I am usually able to schedule our first meeting within a week.</p>
 	<p>Denver Psychology and Wellness' office is located at:</p>
 	<p><strong>{{ site.address }}</strong></p>
 
 	<div style="height:100%; width:100%;">
-		<div id="map" class="contact-map"></div>
+		<div id="map" class="contact-map" role="application" aria-label="Google Maps showing office location"></div>
 	</div>
 </section>
 
@@ -27,7 +29,8 @@ banner_url: images/green-mountains-banner.jpg
 
 		var marker = new google.maps.Marker({
 			position: uluru,
-			map: map
+			map: map,
+			title: 'Denver Psychology and Wellness'
 		});
 	}
 </script>

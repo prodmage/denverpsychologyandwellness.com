@@ -5,12 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ site.title }} | {{ page.title }}</title>
-    <meta name="description" content="{{ site.description }}" >
+    <title>{% if page.meta_title %}{{ page.meta_title }}{% else %}{{ site.title }} | {{ page.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}" >
     <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
     
-    <meta property="og:image" content="{{site.base_url }}/images/logo.png" /> 
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.base_url }}{{ page.url }}" />
+    <meta property="og:title" content="{% if page.meta_title %}{{ page.meta_title }}{% else %}{{ site.title }} | {{ page.title }}{% endif %}" />
+    <meta property="og:description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="og:image" content="{{site.base_url }}/images/logo.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ site.base_url }}{{ page.url }}" />
+    <meta property="twitter:title" content="{% if page.meta_title %}{{ page.meta_title }}{% else %}{{ site.title }} | {{ page.title }}{% endif %}" />
+    <meta property="twitter:description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="twitter:image" content="{{site.base_url }}/images/logo.png" />
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Psychologist",
+      "name": "{{ site.title }}",
+      "image": "{{site.base_url }}/images/logo.png",
+      "@id": "{{ site.base_url }}",
+      "url": "{{ site.base_url }}",
+      "telephone": "{{ site.phone_number }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1777 South Bellaire Street, Suite 339",
+        "addressLocality": "Denver",
+        "addressRegion": "CO",
+        "postalCode": "80222",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.6899,
+        "longitude": -104.9117
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "sameAs": "{{ site.base_url }}",
+      "priceRange": "$$"
+    }
+    </script>
 
     <link rel="shortcut icon" type="image/x-icon" href="{{site.base_url }}/images/favicon.ico">
 
