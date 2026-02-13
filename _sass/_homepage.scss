@@ -24,3 +24,93 @@
 		}
 	}
 }
+
+/* Call to Action Buttons */
+.cta-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+	margin: 40px auto;
+	
+	@include bp(tablet) {
+		flex-direction: row;
+		justify-content: center;
+		gap: 20px;
+	}
+}
+
+.cta-button {
+	display: inline-block;
+	padding: 16px 32px;
+	font-size: 18px;
+	font-family: 'cooper_hewittmedium';
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 50px;
+	transition: all 0.3s ease;
+	text-align: center;
+	min-width: 250px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	}
+	
+	&:active {
+		transform: translateY(0);
+	}
+	
+	@include bp(tablet) {
+		min-width: auto;
+		padding: 18px 40px;
+		font-size: 19px;
+	}
+}
+
+.cta-primary {
+	background: linear-gradient(135deg, $primaryColor 0%, darken($primaryColor, 10%) 100%);
+	color: #fff;
+	border: 2px solid $primaryColor;
+	
+	&:hover {
+		background: linear-gradient(135deg, darken($primaryColor, 5%) 0%, darken($primaryColor, 15%) 100%);
+		border-color: darken($primaryColor, 10%);
+	}
+}
+
+.cta-secondary {
+	background: #fff;
+	color: $secondaryColor;
+	border: 2px solid $secondaryColor;
+	
+	&:hover {
+		background: $secondaryColor;
+		color: #fff;
+	}
+}
+
+.cta-icon {
+	display: inline-block;
+	margin-right: 5px;
+	font-size: 16px;
+}
+
+.cta-bottom {
+	margin-top: 60px;
+	padding-top: 40px;
+	border-top: 2px solid $borderColor;
+}
+
+.cta-text {
+	font-size: 22px;
+	margin-bottom: 20px;
+	color: $secondaryColor;
+	
+	@include bp(tablet) {
+		font-size: 24px;
+	}
+}
