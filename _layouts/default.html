@@ -13,6 +13,10 @@
       </section>
       <div class="push"></div>
     </div>
+    
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay"></div>
+    
 	  {% include footer.html %}
     {% include analytics.html %}
   </body>
@@ -25,6 +29,7 @@
 <script src="{{ site.base_url }}/javascript/raptor/jquery.raptorize.2.0.js"></script>
 <script>
   $(document).ready(function(){
+    // Image slider
     $('#bxslider').bxSlider({
       mode: 'fade',
       captions: true,
@@ -33,10 +38,12 @@
       pause: 3000
     });
 
+    // Raptor easter egg
     $('#raptor').raptorize({
       'enterOn' : 'konami-code'
     });
 
+    // Logo hover effect
     var isScrolling = false;
     $('#logo').hover(function() {
       if (!isScrolling) {
@@ -48,7 +55,7 @@
       }
     });
 
-    // If a user scrolls below the absolute top, then update the header
+    // Header scroll effect
     $(window).scroll(function () {
       var $header = $("#header");
 
@@ -62,6 +69,43 @@
         isScrolling = true;
         $header.addClass("alternate-header");
         $header.find('#logo').attr("src", "{{ site.base_url }}/images/logo.png");
+      }
+    });
+
+    // Mobile menu toggle
+    $('.mobile-menu-toggle').on('click', function() {
+      $('body').toggleClass('mobile-menu-open');
+      var isOpen = $('body').hasClass('mobile-menu-open');
+      $(this).attr('aria-expanded', isOpen);
+      
+      // Prevent body scroll when menu is open
+      if (isOpen) {
+        $('body').css('overflow', 'hidden');
+      } else {
+        $('body').css('overflow', '');
+      }
+    });
+
+    // Close mobile menu when clicking overlay
+    $('.mobile-menu-overlay').on('click', function() {
+      $('body').removeClass('mobile-menu-open');
+      $('.mobile-menu-toggle').attr('aria-expanded', 'false');
+      $('body').css('overflow', '');
+    });
+
+    // Close mobile menu when clicking a navigation link
+    $('.navigation a').on('click', function() {
+      $('body').removeClass('mobile-menu-open');
+      $('.mobile-menu-toggle').attr('aria-expanded', 'false');
+      $('body').css('overflow', '');
+    });
+
+    // Close mobile menu on window resize to desktop size
+    $(window).on('resize', function() {
+      if ($(window).width() >= 768) {
+        $('body').removeClass('mobile-menu-open');
+        $('.mobile-menu-toggle').attr('aria-expanded', 'false');
+        $('body').css('overflow', '');
       }
     });
   });

@@ -9,9 +9,33 @@ meta_description: Schedule your FREE 50-minute consultation today. Call (303) 73
 	<h2>Contact John</h2>
 </div>
 <section class="contact-content">
-	<p>Finding a therapist can be intimidating so I offer a FREE 50-minute consultation, to answer your questions and see if we would work well together.  Please call me at <a href="tel:{{ site.phone_number | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}">{{ site.phone_number }}</a> or email me at <a href="mailto:{{ site.email}}">{{ site.email}}</a> to schedule an appointment and I am usually able to schedule our first meeting within a week.</p>
-	<p>Denver Psychology and Wellness' office is located at:</p>
-	<p><strong>{{ site.address }}</strong></p>
+	<div class="contact-info-box">
+		<h3>Schedule Your Free Consultation</h3>
+		<p>Finding a therapist can be intimidating so I offer a FREE 50-minute consultation, to answer your questions and see if we would work well together. I am usually able to schedule our first meeting within a week.</p>
+		
+		<div class="contact-methods">
+			<div class="contact-method">
+				<span class="contact-icon">📞</span>
+				<div class="contact-details">
+					<strong>Phone</strong>
+					<a href="tel:{{ site.phone_number | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}" class="contact-link">{{ site.phone_number }}</a>
+				</div>
+			</div>
+			
+			<div class="contact-method">
+				<span class="contact-icon">✉️</span>
+				<div class="contact-details">
+					<strong>Email</strong>
+					<a href="mailto:{{ site.email}}" class="contact-link">{{ site.email}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="office-location">
+		<h3>Office Location</h3>
+		<p><strong>{{ site.address }}</strong></p>
+	</div>
 
 	<div style="height:100%; width:100%;">
 		<div id="map" class="contact-map" role="application" aria-label="Google Maps showing office location"></div>
