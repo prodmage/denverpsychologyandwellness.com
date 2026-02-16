@@ -125,21 +125,29 @@
       @media (max-width: 767px) {
         .navigation {
           position: fixed !important;
-          top: 0;
+          top: 0 !important;
           right: -100%;
+          bottom: 0 !important;
           width: 70%;
           max-width: 300px;
-          height: 100vh;
+          height: 100vh !important;
           background: rgba(14, 77, 146, 0.98);
           transition: right 0.3s ease;
           padding-top: 80px;
           z-index: 15;
-          overflow: visible !important;
+          overflow-y: auto !important;
+          overflow-x: hidden !important;
         }
         
         .mobile-menu-open .navigation {
           right: 0;
           box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .navigation ul {
+          margin: 0 !important;
+          padding: 0 !important;
+          list-style: none !important;
         }
         
         .navigation li {
@@ -152,6 +160,7 @@
           display: block !important;
           padding: 18px 25px !important;
           font-size: 16px !important;
+          color: #fff !important;
         }
         
         .navigation li a:hover {
