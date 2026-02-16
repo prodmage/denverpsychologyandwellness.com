@@ -94,10 +94,15 @@
     });
 
     // Close mobile menu when clicking a navigation link
-    $('.navigation a').on('click', function() {
-      $('body').removeClass('mobile-menu-open');
-      $('.mobile-menu-toggle').attr('aria-expanded', 'false');
-      $('body').css('overflow', '');
+    // The menu will close with animation, but the link will still navigate
+    $('.navigation a').on('click', function(e) {
+      // Only close menu on mobile
+      if ($(window).width() < 768) {
+        $('body').removeClass('mobile-menu-open');
+        $('.mobile-menu-toggle').attr('aria-expanded', 'false');
+        $('body').css('overflow', '');
+        // Let the link navigate normally - don't prevent default
+      }
     });
 
     // Close mobile menu on window resize to desktop size
