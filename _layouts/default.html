@@ -73,7 +73,9 @@
     });
 
     // Mobile menu toggle
-    $('.mobile-menu-toggle').on('click', function() {
+    $('.mobile-menu-toggle').on('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
       $('body').toggleClass('mobile-menu-open');
       var isOpen = $('body').hasClass('mobile-menu-open');
       $(this).attr('aria-expanded', isOpen);
@@ -93,8 +95,12 @@
       $('body').css('overflow', '');
     });
 
-    // DON'T interfere with navigation links - let them work normally
-    // The menu will close automatically when the page navigates away
+    // Debug: Log when navigation links are clicked
+    $('.navigation a').on('click', function(e) {
+      console.log('Navigation link clicked:', $(this).attr('href'));
+      console.log('Link element:', this);
+      // Don't prevent default - let the link work
+    });
 
     // Close mobile menu on window resize to desktop size
     $(window).on('resize', function() {
