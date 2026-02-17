@@ -95,12 +95,7 @@
       $('body').css('overflow', '');
     });
 
-    // Debug: Log when navigation links are clicked
-    $('.navigation a').on('click', function(e) {
-      console.log('Navigation link clicked:', $(this).attr('href'));
-      console.log('Link element:', this);
-      // Don't prevent default - let the link work
-    });
+    // NO HANDLERS ON NAVIGATION LINKS - let them work naturally!
 
     // Close mobile menu on window resize to desktop size
     $(window).on('resize', function() {
