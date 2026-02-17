@@ -193,13 +193,13 @@
         }
       }
       
-      /* Mobile menu overlay */
+      /* Mobile menu overlay - Only cover the LEFT 30% of screen, NOT the menu! */
       .mobile-menu-overlay {
         display: none;
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 30%; /* Only the left 30%, leaving right 70% for menu */
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
         z-index: 998;
